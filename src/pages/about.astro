@@ -7,6 +7,7 @@ import Sectionhead from "@components/sectionhead.astro";
 import fitz from "assets/fitz.jpg";
 import royalCity from "assets/royalCity.jpg";
 import acoustic from "assets/acoustic.jpg";
+import Link from "@components/ui/link.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const showcaseImages = [
@@ -101,6 +102,22 @@ const showcaseImages = [
           has to offer. <br />
         </p>
       </div>
+      <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <h2 class="font-bold text-3xl text-gray-800">Want to perform?</h2>
+        <p class="text-lg leading-relaxed text-slate-500">
+          Time slots selection require signup. If you're eager to perform,
+          select one of the remaining available timeslots. Follow the button
+          below: <br />
+        </p>
+      </div>
+      <Link
+        size="lg"
+        style="outline"
+        href="/signup"
+        class="flex gap-1 items-center justify-center max-w-xs mx-auto"
+      >
+        Signup
+      </Link>
     </div>
   </Container>
 </Layout>
