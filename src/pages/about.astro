@@ -4,54 +4,103 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import fitz from "assets/fitz.jpg";
+import royalCity from "assets/royalCity.jpg";
+import acoustic from "assets/acoustic.jpg";
 
 // Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+const showcaseImages = [
+  {
+    avatar: {
+      src: acoustic,
+      alt: "A picture of someone playing a guitar",
+    },
+    name: "Acoustic Music",
+    title: "Genre",
+  },
+  {
+    avatar: {
+      src: royalCity,
+      alt: "A picture of the exterior of Royal City Brewery",
+    },
+    name: "Royal City Brewery Co.",
+    title: "Venue",
+  },
+  {
+    avatar: {
+      src: fitz,
+      alt: "A picture of Alex Fitz Filazzola performing",
+    },
+    name: "Alex 'Fitz' Filazzola",
+    title: "Host",
+  },
+];
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">Guelph Open Mic presented by Fitz</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        What style is this open mic?
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        The Guelph Open Mic is an event for musicians of all skill levels to
+        come together and share their music with the community. We welcome all
+        genres and styles of music, and we encourage everyone to come out and
+        support local talent. Whether you're a seasoned performer or you're just
+        starting out, we want to hear from you! <br />
+        There are 15-minute time slots allocated to each person or roughly 3-4 songs.
+        You can play as a solo act or with a group. We have microphones and a PA
+        system, but the music is meant to be accoustic. We're looking to add ambience
+        to the Beer Hall and not overpower the space. This works great for shy perfomers,
+        because the music is meant to be background music. <br />
+        The first event will be Sunday May 26th from 6-9 pm at <a
+          href="https://royalcitybrew.ca/">Royal City Brewery Co.</a
+        > If successful, we are planning on making this a monthly occurrence throughout
+        the summer where folks can come and play.
       </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
+      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+        {
+          showcaseImages.map((image) => (
+            <div class="group">
+              <div class="w-full aspect-square">
+                <Picture
+                  src={image.avatar.src}
+                  alt={image.avatar.alt}
+                  sizes="(max-width: 800px) 100vw, 400px"
+                  width={400}
+                  height={400}
+                  class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+                />
+              </div>
 
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
+              <div class="mt-4 text-center">
+                <h2 class="text-lg text-gray-800">{image.name}</h2>
+                <h3 class="text-sm text-slate-500">{image.title}</h3>
+              </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <h2 class="font-bold text-3xl text-gray-800">Who is Fitz?</h2>
+        <p class="text-lg leading-relaxed text-slate-500">
+          Alex "Fitz" Filazzola is a local musician and music enthusiast who has
+          been playing music for over 20 years. Guitar is his main instrument of
+          choice and he has played in bands, as a solo act, and very recently
+          joined the Guelph music scene. He has a passion for music and wants to
+          create a space where musicians can come together and share their music
+          with the community. He is excited to be hosting the Guelph Open Mic
+          and is looking forward to hearing all the amazing talent that Guelph
+          has to offer. <br />
+        </p>
+      </div>
     </div>
   </Container>
 </Layout>

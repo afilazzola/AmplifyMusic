@@ -12,7 +12,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.jpg",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title } = Astro.props;
@@ -22,7 +22,7 @@ const makeTitle = title
   : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -33,7 +33,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Guelph Open Mic - an acoustic open mic night host at Royal City Brewery Co."
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
@@ -44,11 +44,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Guelph Open Mic - Presented by Fitz`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Guelph Open Mic Homepage Screenshot",
         },
       }}
     />
