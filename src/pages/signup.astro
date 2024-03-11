@@ -1,0 +1,55 @@
+---
+import Contactform from "@components/contactform.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Signup">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Sign-up</Fragment>
+      <Fragment slot="desc">Get up on stage.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div class="px-5 md:px-0">
+        <h2 class="font-medium text-2xl text-gray-800">Sign-up to perform</h2>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          <br />
+          <ul style="list-style-type: disc;">
+            <li style="margin-bottom: 20px">
+              Sets are 15 minutes long with a 5-minute changeover.
+            </li>
+            <li style="margin-bottom: 20px">
+              Each performer can only sign up for one set per night.
+            </li>
+            <li style="margin-bottom: 20px">
+              A PA system and microphone will be provided. Everything else is
+              BYO.
+            </li>
+            <li style="margin-bottom: 20px">
+              Performers must arrive at least 30 minutes before the scheduled
+              start time to check-in.
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div>
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/alex-filazzola/15-minute-set"
+          style="min-width:420px;height:700px;"
+        >
+        </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
+  </Container>
+</Layout>
