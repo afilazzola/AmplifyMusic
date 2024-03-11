@@ -18,8 +18,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "Guelph Open Mic"
+  : "Guelph Open Mic - At Royal City Brewing & Presented by Fitz";
 ---
 
 <!doctype html>
@@ -33,7 +33,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Guelph Open Mic - an acoustic open mic night host at Royal City Brewery Co."
+      description="Guelph Open Mic - an acoustic open mic night hosted at Royal City Brewing Co. and Presented by Fitz."
       canonical={canonicalURL}
       twitter={{
         creator: "@surjithctly",
