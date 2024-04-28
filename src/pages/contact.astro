@@ -3,6 +3,7 @@ import Contactform from "@components/contactform.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
+import GoogleAnalytics from "@components/googleAnalytics";
 ---
 
 <Layout title="Contact">
@@ -11,6 +12,9 @@ import Layout from "@layouts/Layout.astro";
       <Fragment slot="title">Contact</Fragment>
       <Fragment slot="desc">Here for any questions</Fragment>
     </Sectionhead>
+    <head>
+      <GoogleAnalytics client:load />
+    </head>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>

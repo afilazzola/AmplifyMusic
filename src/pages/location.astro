@@ -3,6 +3,7 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import { Icon } from "astro-icon";
+import GoogleAnalytics from "@components/googleAnalytics";
 ---
 
 <Layout title="Location">
@@ -11,6 +12,9 @@ import { Icon } from "astro-icon";
       <Fragment slot="title">Location</Fragment>
       <Fragment slot="desc">A beer hall for music</Fragment>
     </Sectionhead>
+    <head>
+      <GoogleAnalytics client:load />
+    </head>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div class="px-5 md:px-0">

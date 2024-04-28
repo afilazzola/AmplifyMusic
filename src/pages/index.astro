@@ -4,9 +4,20 @@ import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
 import Layout from "@layouts/Layout.astro";
+import GoogleAnalytics from "@components/googleAnalytics";
+import Sectionhead from "@components/sectionhead.astro";
 ---
 
 <Layout title="">
+  <Sectionhead>
+    <Fragment slot="title">Guelph Open Mic</Fragment>
+    <Fragment slot="desc"
+      >An open mic night at Royal City Brewing Co. Free to listen, free to play.</Fragment
+    >
+  </Sectionhead>
+  <head>
+    <GoogleAnalytics client:load />
+  </head>
   <Container>
     <Hero />
     <Features />

@@ -8,6 +8,7 @@ import fitz from "assets/fitz.jpg";
 import royalCity from "assets/royalCity.jpg";
 import acoustic from "assets/acoustic.jpg";
 import Link from "@components/ui/link.astro";
+import GoogleAnalytics from "@components/googleAnalytics";
 
 // Filter team entries with 'draft: false' & date before current date
 const showcaseImages = [
@@ -47,6 +48,9 @@ const showcaseImages = [
       <Fragment slot="title">About</Fragment>
       <Fragment slot="desc">Guelph Open Mic presented by Fitz</Fragment>
     </Sectionhead>
+    <head>
+      <GoogleAnalytics client:load />
+    </head>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
