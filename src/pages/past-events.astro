@@ -19,10 +19,8 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
-      </Fragment>
+      <Fragment slot="title">Past Events</Fragment>
+      <Fragment slot="desc"> Check out some our previous open mics </Fragment>
     </Sectionhead>
     <main class="mt-16">
       <ul class="grid gap-16 max-w-4xl mx-auto">
@@ -51,13 +49,11 @@ publishedBlogEntries.sort(function (a, b) {
                     </h2>
 
                     <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
+                        datetime={blogPostEntry.data.publishDate.toISOString()}
+                      >
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
                     </div>
