@@ -12,14 +12,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/social-media.jpg",
-  Astro.site,
+  Astro.site
 ).toString();
 
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Guelph Open Mic"
-  : "Guelph Open Mic - At Royal City Brewing & Presented by Fitz";
+  ? title + " | " + "Amplify"
+  : "Amplify Music - A community for musicians to perform in Canada";
 ---
 
 <!doctype html>
@@ -33,22 +33,22 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Guelph Open Mic - an open mic night hosted at Royal City Brewing Co. and Presented by Fitz."
+      description="Amplify Music - A community-driven initiative that connects local musicians with venues and audiences in Canada."
       canonical={canonicalURL}
       twitter={{
         creator: "Alex Filazzola",
-        site: "Guelph Open Mic",
+        site: "Amplify Music",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Guelph Open Mic - Presented by Fitz and Hosted at Royal City Brewing Co.`,
+          title: `Amplify Music - A community-driven initiative that connects local musicians with venues and audiences in Canada.`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Guelph Open Mic Homepage Screenshot",
+          alt: "Amplify Music Homepage Screenshot",
         },
       }}
     />

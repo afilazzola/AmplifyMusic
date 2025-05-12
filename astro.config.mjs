@@ -6,6 +6,6 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://guelphopenmic.ca",
+  site: "https://amplifymusic.ca",
   integrations: [tailwind(), mdx(), sitemap(), preact()],
 });
