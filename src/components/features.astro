@@ -6,19 +6,19 @@ const features = [
   {
     title: "Discover",
     description:
-      "Come listen to a diverse array of performances at our open mic nights. You never know what hidden talent you might discover!",
+      "Experience the raw energy of new voices and unique sounds. Our open mic nights showcase a rotating lineup of grassroots performers from your community.",
     icon: "noto-v1:magnifying-glass-tilted-left",
   },
   {
     title: "Perform",
     description:
-      "Take the stage and share your talent with our supportive audience. Whether you're a solo act or part of a group, there's room for you to shine.",
+      "Don’t have a booking agent or label? No problem. Amplify gives independent musicians access to real venues and real audiences—just bring your songs and your courage.",
     icon: "twemoji:musical-notes",
   },
   {
     title: "Connect",
     description:
-      "Be a part of our community and make new friends. Share your love of music and performance with others who feel the same way.",
+      "Whether you're on stage or in the crowd, Amplify is a space to build community, collaborate with others, and share your love of live music.",
     icon: "fluent:people-community-28-filled",
   },
 ];
@@ -29,18 +29,20 @@ const features = [
 </style>
 <div class="mt-4 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mb-8 md:mb-0">
-    Join our local community of musicians
+    Amplify your sound. Join the community.
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Our next Open Mic Night is planned for 6-9 pm on Sunday July 21st at <a
+    The next Open Mic Night runs from 6–9 pm on Sunday July 21st at <a
       href="https://royalcitybrew.ca/"
       target="_blank"
     >
       Royal City Brewing Co.</a
-    > We invite any musician, regardless of skill level, to play a semi-acoustic
-    set for 15 minutes. Sign-up is first come, first serve and can be done <a
-      href="/signup">online</a
-    > prior to the event. We hope to see you there!
+    > We're also popping up soon at Peter G’s in Toronto and La Poche in Guelph.
+    <br /><br />
+    Musicians of all styles and skill levels are welcome. Each performer gets 15
+    minutes to share their sound. Sign-up is first come, first serve—<a
+      href="/signup">claim your slot here</a
+    >.
   </p>
 </div>
 
@@ -48,11 +50,11 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg">{item.title}</h3>
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>

@@ -4,13 +4,12 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import fitz from "assets/fitz.jpg";
 import royalCity from "assets/royalCity.jpg";
 import acoustic from "assets/acoustic.jpg";
 import Link from "@components/ui/link.astro";
 import GoogleAnalytics from "@components/googleAnalytics";
 
-// Filter team entries with 'draft: false' & date before current date
+// Updated images
 const showcaseImages = [
   {
     avatar: {
@@ -28,14 +27,6 @@ const showcaseImages = [
     name: "Royal City Brewing Co.",
     title: "Venue",
   },
-  {
-    avatar: {
-      src: fitz,
-      alt: "A picture of Alex Fitz Filazzola performing",
-    },
-    name: "Alex 'Fitz' Filazzola",
-    title: "Host",
-  },
 ];
 ---
 
@@ -46,34 +37,49 @@ const showcaseImages = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">Guelph Open Mic presented by Fitz</Fragment>
+      <Fragment slot="desc">Amplify – Community Music Series</Fragment>
     </Sectionhead>
     <head>
       <GoogleAnalytics client:load />
     </head>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        What style is this open mic?
-      </h2>
+      <h2 class="font-bold text-3xl text-gray-800">What is Amplify?</h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        The Guelph Open Mic is an event for musicians of all skill levels to
-        come together and share their music with the community. All genres and
-        styles of music are welcome and everyone is encouraged to come out and
-        support local talent. It's free, fun, and a great way to meet people.
+        Amplify is a grassroots, community-driven initiative committed to
+        connecting Canadian musicians with venues to showcase their music. Our
+        mission is to amplify emerging and journey-level musicians by providing
+        access to real stages, real crowds, and real community support.
+        <br /><br />
+        Many musicians lack the connections or means to book a venue on their own.
+        Amplify helps break down those barriers by organizing regular open mic nights
+        and showcase events. Whether you're an up-and-coming singer-songwriter or
+        an acoustic duo looking for a chance to be heard, Amplify exists to give
+        you that platform.
+        <br /><br />
+        We're not just about performance—we're building a collaborative scene where
+        musicians, fans, and venues grow together. All styles and genres are welcome.
+        The vibe is intimate and acoustic—meant to enhance, not overpower, the room.
+        <br /><br />
+        Current and upcoming venues include:
+        <ul class="list-disc list-inside pl-4 mt-2">
+          <li>
+            <a href="https://royalcitybrew.ca/" target="_blank"
+              >Royal City Brewing Co. (Guelph)</a
+            >
+          </li>
+          <li>
+            <a href="https://www.petergs.ca/" target="_blank"
+              >Peter G's Bar & Grill (Toronto)</a
+            >
+          </li>
+          <li>
+            <a href="https://lapoche.ca/" target="_blank">La Poche (Guelph)</a>
+          </li>
+        </ul>
         <br />
-        <br />
-        There are 15-minute time slots allocated to each person or roughly 3-4 songs.
-        You can play as a solo act or with a group. There will be microphones and
-        a PA system, but the music is meant to be semi-acoustic. This means focusing
-        on smaller setups to create a relaxed vibe without large bands or drums,
-        and avoiding bass and distortion. We are looking to add ambience to the Beer
-        Hall and not overpower the space.
-        <br />
-        <br />
-        The next event will be Sunday July 21st from 6-9 pm at <a
-          href="https://royalcitybrew.ca/">Royal City Brewing Co.</a
-        > Check out our <a href="/signup">previous events</a>.
+        The next event is Sunday May 25th, from 4-8 pm at La Poche in Guelph.
+        <a href="/signup">View past events or sign up to perform.</a>
       </p>
       <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
         {
@@ -100,24 +106,10 @@ const showcaseImages = [
       </div>
 
       <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-        <h2 class="font-bold text-3xl text-gray-800">Who is Fitz?</h2>
-        <p class="text-lg leading-relaxed text-slate-500">
-          Alex "Fitz" Filazzola is a local musician and music enthusiast who has
-          been playing music for over 20 years. Guitar is his main instrument of
-          choice and he has played in bands, as a solo act, and very recently
-          joined the Guelph music scene. He has a passion for music and wants to
-          create a space where musicians can come together and share their music
-          with the community. He is excited to be hosting the Guelph Open Mic
-          and is looking forward to hearing all the amazing talent that Guelph
-          has to offer. <br />
-        </p>
-      </div>
-      <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
         <h2 class="font-bold text-3xl text-gray-800">Want to perform?</h2>
         <p class="text-lg leading-relaxed text-slate-500">
-          Time slots selection require signup. If you're eager to perform,
-          select one of the remaining available timeslots. Follow the button
-          below. <br />
+          Slots are open to anyone, but spots are limited and fill fast. Choose
+          your time in advance and let your sound be heard!
         </p>
       </div>
       <Link
