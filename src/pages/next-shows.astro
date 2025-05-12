@@ -2,15 +2,16 @@
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
+import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 import GoogleAnalytics from "@components/googleAnalytics";
 ---
 
-<Layout title="Location">
+<Layout title="Next shows">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Location</Fragment>
-      <Fragment slot="desc">A beer hall for music</Fragment>
+      <Fragment slot="title">Next Shows</Fragment>
+      <Fragment slot="desc">Find one near you</Fragment>
     </Sectionhead>
     <head>
       <GoogleAnalytics client:load />
@@ -19,33 +20,39 @@ import GoogleAnalytics from "@components/googleAnalytics";
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div class="px-5 md:px-0">
         <h2 class="font-medium text-2xl text-gray-800">
-          Royal City Brewing Co.
+          La Poche (Guelph) May 25, 2025
         </h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          We're lucky to be hosted by Royal City
-          Brewing Co. in the Ward Room. The brewery is located on the east side of Guelph and is
-          open to all ages. They have a great select of food and, of course,
-          amazing beer.
+          We're lucky to be hosted by La Poche in downtown Guelph. A great venue
+          that is low-key and intimate. Come for a drink and a show!
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>199 Victoria Road South Unit C8</span>
+            <span>40 Quebec Street</span>
             <span> Guelph, Ontario</span>
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:info@royalcitybrew.ca">info@royalcitybrew.ca</a
+              href="https://lapoche.ca/">https://lapoche.ca/</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <!-- </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
               href="tel:+1 (888) 485 2739">+1 888-485-2739</a
-            >
+            > -->
           </div>
+          <Link
+            size="lg"
+            style="outline"
+            href="/signup"
+            class="flex gap-1 items-center justify-center max-w-xs ml-0 mt-4"
+          >
+            Sign-up
+          </Link>
         </div>
       </div>
       <div class="px-5 md:px-0">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64182.64387615399!2d-80.27855622028885!3d43.55149996803152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b9b1afc610dad%3A0x7700de5e0d30a7af!2sRoyal%20City%20Brewing%20Company!5e0!3m2!1sen!2sca!4v1710122917371!5m2!1sen!2sca"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.9169935571267!2d-80.25325822434877!3d43.54577215937308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b9ac1c4b78cc3%3A0x58797d89eacc0a21!2s40%20Quebec%20St%2C%20Guelph%2C%20ON%20N1H%202T4!5e0!3m2!1sen!2sca!4v1747010780621!5m2!1sen!2sca"
           width="100%"
           height="450"
           style="border:0;"
