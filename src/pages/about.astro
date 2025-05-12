@@ -4,8 +4,9 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import royalCity from "assets/royalCity.jpg";
-import acoustic from "assets/acoustic.jpg";
+import perform from "/public/may26_1.jpg";
+import discover from "/public/july21_1.jpg";
+import connect from "/public/march9_2.jpg";
 import Link from "@components/ui/link.astro";
 import GoogleAnalytics from "@components/googleAnalytics";
 
@@ -13,19 +14,27 @@ import GoogleAnalytics from "@components/googleAnalytics";
 const showcaseImages = [
   {
     avatar: {
-      src: acoustic,
+      src: discover,
       alt: "A picture of someone playing a guitar",
     },
-    name: "Semi-acoustic Music",
-    title: "Genre",
+    name: "Find local talent",
+    title: "Discover",
   },
   {
     avatar: {
-      src: royalCity,
-      alt: "A picture of the exterior of Royal City Brewing Co.",
+      src: perform,
+      alt: "Two musicians playing in front of an audience at the Royal City Brewery.",
     },
-    name: "Royal City Brewing Co.",
-    title: "Venue",
+    name: "Play to a crowd",
+    title: "Perform",
+  },
+  {
+    avatar: {
+      src: connect,
+      alt: "A packed audience waiting for the next act at Peter G's Bar and Grill.",
+    },
+    name: "Meet fellow musicians",
+    title: "Connect",
   },
 ];
 ---
@@ -77,9 +86,6 @@ const showcaseImages = [
             <a href="https://lapoche.ca/" target="_blank">La Poche (Guelph)</a>
           </li>
         </ul>
-        <br />
-        The next event is Sunday May 25th, from 4-8 pm at La Poche in Guelph.
-        <a href="/signup">View past events or sign up to perform.</a>
       </p>
       <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
         {
